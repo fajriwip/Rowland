@@ -23,10 +23,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        {
-          rel: "stylesheet",
-          href: "https://a.storyblok.com/f/212319/x/e6ccda03b8/blueprint-blank.css",
-        },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
