@@ -10,12 +10,15 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
+		"@nuxt/icon": "^2.5.1",
 		"nuxt": "^4.2.2",
 		"vue": "^3.5.18",
 		"vue-router": "^5.3.1"
 	},
 	"devDependencies": {
 		"@storyblok/nuxt": "^11.2.1",
+		"@tailwindcss/vite": "^4.3.3",
+		"tailwindcss": "^4.3.3",
 		"vite-plugin-mkcert": "^2.1.0"
 	}
 }

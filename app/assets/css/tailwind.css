@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Habibi", serif;
+  --font-body: "Geist", sans-serif;
+
+  --color-ink: #1a0a06;
+  --color-paper: #fbf5ef;
+  --color-accent: #e55639;
+
+  --text-h1: 40px;
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-h2: 32px;
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h3: 18px;
+  --text-h3--line-height: 1.28;
+  --text-h3--letter-spacing: -0.02em;
+
+  --text-display: 24px;
+  --text-display--line-height: 1.28;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-body-l: 18px;
+  --text-body-l--line-height: 1.4;
+  --text-body-l--letter-spacing: -0.02em;
+
+  --text-body-m: 16px;
+  --text-body-m--line-height: 1.4;
+  --text-body-m--letter-spacing: -0.02em;
+
+  --text-body-s: 14px;
+  --text-body-s--line-height: 1.4;
+  --text-body-s--letter-spacing: -0.02em;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}

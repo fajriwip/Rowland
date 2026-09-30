@@ -1,9 +1,12 @@
 import mkcert from "vite-plugin-mkcert";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2026-01-13",
   devtools: { enabled: false },
-  modules: ["@storyblok/nuxt"],
+  modules: ["@storyblok/nuxt", "@nuxt/icon"],
+
+  css: ["~/assets/css/tailwind.css"],
 
   storyblok: {
     accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
@@ -24,6 +27,16 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://a.storyblok.com/f/212319/x/e6ccda03b8/blueprint-blank.css",
         },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: "",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Habibi&display=swap",
+        },
       ],
     },
   },
@@ -31,7 +44,7 @@ export default defineNuxtConfig({
   ssr: true,
 
   vite: {
-    plugins: [mkcert()],
+    plugins: [mkcert(), tailwindcss()],
     server: {
       https: true,
     },
