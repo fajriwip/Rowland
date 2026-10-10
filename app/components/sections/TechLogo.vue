@@ -4,6 +4,6 @@ defineProps<{ icon: string; label?: string }>();
 
 <template>
 	<span class="flex items-center justify-center p-1" :title="label">
-		<Icon :name="`logos:${icon}`" class="size-8" />
+		<img :src="`https://cdn.simpleicons.org/${icon}`" :alt="label ?? icon" class="size-8" />
 	</span>
 </template>

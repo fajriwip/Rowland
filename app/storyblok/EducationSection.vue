@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { education as fallback } from "~/content/homeFallback";
-
 const props = defineProps({ blok: { type: Object, required: true } });
 
 const dateRange = (item: any) => {
@@ -9,16 +7,14 @@ const dateRange = (item: any) => {
 };
 
 const items = () =>
-	props.blok.items?.length
-		? props.blok.items.map((item: any) => ({
-				degree: item.degree,
-				school: item.school,
-				dateRange: dateRange(item),
-				description: item.description,
-			}))
-		: fallback.items;
+	props.blok.items?.map((item: any) => ({
+		degree: item.degree,
+		school: item.school,
+		dateRange: dateRange(item),
+		description: item.description,
+	})) ?? [];
 </script>
 
 <template>
-	<SectionsEducationSection v-editable="blok" :heading="blok.heading || fallback.heading" :items="items()" />
+	<SectionsEducationSection v-editable="blok" :heading="blok.heading" :items="items()" />
 </template>

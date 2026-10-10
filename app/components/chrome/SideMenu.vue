@@ -1,7 +1,17 @@
 <script setup lang="ts">
-import { profile as profileFallback } from "~/content/homeFallback";
-
-const profile = useState("profile-card", () => profileFallback);
+const profile = useState("profile-card", () => ({
+	photo: "",
+	name: "",
+	position: "",
+	tagline: "",
+	signature: "",
+	location: "",
+	yearsExperience: "",
+	availability: "",
+	cvFile: "",
+	email: "",
+	socialLinks: [],
+}));
 </script>
 
 <template>

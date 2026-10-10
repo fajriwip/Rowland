@@ -10,6 +10,7 @@ export default defineNuxtConfig({
 
   storyblok: {
     accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
+    componentsDir: "~/storyblok",
     apiOptions: {
       /** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
       region: process.env.STORYBLOK_REGION || "eu",
@@ -39,10 +40,11 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  devServer: {
+    https: true
+  },
+
   vite: {
     plugins: [mkcert(), tailwindcss()],
-    server: {
-      https: true,
-    },
   },
 });

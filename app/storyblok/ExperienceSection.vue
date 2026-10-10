@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { renderRichText } from "@storyblok/vue";
-import { experience as fallback } from "~/content/homeFallback";
 
 const props = defineProps({ blok: { type: Object, required: true } });
 
@@ -10,18 +9,16 @@ const dateRange = (item: any) => {
 };
 
 const items = () =>
-	props.blok.items?.length
-		? props.blok.items.map((item: any) => ({
-				logo: item.logo?.filename,
-				role: item.role,
-				company: item.company,
-				employmentType: item.employment_type,
-				dateRange: dateRange(item),
-				description: renderRichText(item.description),
-			}))
-		: fallback.items;
+	props.blok.items?.map((item: any) => ({
+		logo: item.logo?.filename,
+		role: item.role,
+		company: item.company,
+		employmentType: item.employment_type,
+		dateRange: dateRange(item),
+		description: renderRichText(item.description),
+	})) ?? [];
 </script>
 
 <template>
-	<SectionsExperienceSection v-editable="blok" :heading="blok.heading || fallback.heading" :items="items()" />
+	<SectionsExperienceSection v-editable="blok" :heading="blok.heading" :items="items()" />
 </template>

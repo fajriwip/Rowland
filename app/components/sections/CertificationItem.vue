@@ -19,7 +19,7 @@ defineProps<{
 				<div class="flex flex-wrap items-center gap-x-2">
 					<span class="text-body-s text-ink/60">{{ issuer }}</span>
 					<span class="size-[3px] bg-ink/60" />
-					<span class="text-body-s text-ink/60">{{ issuedDate }}</span>
+					<span class="text-body-s text-ink/60">Issued {{ issuedDate }}</span>
 				</div>
 			</div>
 			<a
