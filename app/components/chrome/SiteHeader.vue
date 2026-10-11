@@ -1,5 +1,20 @@
 <script setup lang="ts">
-import { menu } from "~/content/homeFallback";
+type HeaderMenuItem = {
+	label: string;
+	href: string;
+};
+
+type HeaderState = {
+	items: HeaderMenuItem[];
+	ctaLabel: string;
+	ctaHref: string;
+};
+
+const header = useState<HeaderState>("chrome-header", () => ({
+	items: [],
+	ctaLabel: "",
+	ctaHref: "#contact",
+}));
 </script>
 
 <template>
@@ -10,13 +25,13 @@ import { menu } from "~/content/homeFallback";
 			</span>
 			<nav class="flex flex-1 items-center justify-between">
 				<ul class="hidden items-center gap-4 lg:flex">
-					<li v-for="item in menu.items" :key="item.label">
+					<li v-for="item in header.items" :key="item.label">
 						<a :href="item.href" class="py-1 text-body-s font-medium text-ink/60">{{ item.label }}</a>
 					</li>
 				</ul>
-				<a :href="menu.ctaHref" class="ml-auto flex items-center gap-2 bg-ink px-4 py-2">
+				<a :href="header.ctaHref" class="ml-auto flex items-center gap-2 bg-ink px-4 py-2">
 					<Icon name="ph:chat-circle" class="size-4 text-paper" />
-					<span class="text-body-s font-medium text-paper whitespace-nowrap">{{ menu.ctaLabel }}</span>
+					<span class="text-body-s font-medium text-paper whitespace-nowrap">{{ header.ctaLabel }}</span>
 				</a>
 			</nav>
 		</div>
