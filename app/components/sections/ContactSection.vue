@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type ContactMethodEntry = { icon: string; label: string; value: string };
+type ContactMethodEntry = { label: string; value: string; icon?: string };
 type SocialLinkEntry = { platform: string; url: string };
 
 defineProps<{
