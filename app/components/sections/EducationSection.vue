@@ -6,7 +6,7 @@ defineProps<{ heading: string; items: EducationEntry[] }>();
 
 <template>
 	<SectionsSectionShell :heading="heading">
-		<div class="flex w-full flex-col items-start gap-8">
+		<div class="flex w-full flex-col items-start gap-8 md:gap-10">
 			<SectionsEducationItem v-for="item in items" :key="item.degree" v-bind="item" />
 		</div>
 	</SectionsSectionShell>

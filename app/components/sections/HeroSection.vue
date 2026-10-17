@@ -10,16 +10,16 @@ defineProps<{
 </script>
 
 <template>
-	<div class="flex w-full flex-col items-center gap-10 pt-40 pb-26">
+	<div class="flex w-full flex-col items-center gap-10 pt-22 pb-22 md:pt-26 md:pb-26">
 		<img :src="illustration" alt="" class="h-32 w-40" />
 		<div class="flex w-full flex-col items-center gap-6">
 			<div class="flex w-full flex-col items-center gap-2.5 text-center">
-				<h1 class="max-w-[400px] font-display text-h1 text-ink">{{ heading }}</h1>
+				<h1 class="max-w-80 font-display text-h1-mobile text-ink md:max-w-[400px] md:text-h1">{{ heading }}</h1>
 				<p class="max-w-[480px] text-body-l text-ink/60">{{ subheading }}</p>
 			</div>
 			<a
 				:href="exploreLink"
-				class="flex w-full max-w-80 items-center justify-between bg-ink/5 px-4 py-3.5"
+				class="flex w-full max-w-66 items-center justify-between bg-ink/5 px-4 py-3.5 md:max-w-80"
 			>
 				<span class="flex items-center gap-3">
 					<span v-if="exploreLogos?.length" class="flex items-center">

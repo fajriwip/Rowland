@@ -16,6 +16,15 @@
   --text-h2--line-height: 1.2;
   --text-h2--letter-spacing: -0.02em;
 
+  /* ponytail: Figma Mobile/H1 + Mobile/H2 tokens — mobile-only heading sizes */
+  --text-h1-mobile: 32px;
+  --text-h1-mobile--line-height: 1.2;
+  --text-h1-mobile--letter-spacing: -0.02em;
+
+  --text-h2-mobile: 28px;
+  --text-h2-mobile--line-height: 1.2;
+  --text-h2-mobile--letter-spacing: -0.02em;
+
   --text-h3: 18px;
   --text-h3--line-height: 1.28;
   --text-h3--letter-spacing: -0.02em;

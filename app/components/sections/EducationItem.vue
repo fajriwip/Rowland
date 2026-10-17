@@ -8,7 +8,8 @@ defineProps<{
 </script>
 
 <template>
-	<div class="flex w-full items-start gap-6">
+	<div class="flex w-full flex-col items-start gap-3 md:flex-row-reverse md:gap-6">
+		<p class="shrink-0 whitespace-nowrap text-body-s text-ink/60">{{ dateRange }}</p>
 		<div class="flex flex-1 flex-col items-start gap-4">
 			<div class="flex w-full flex-col items-start gap-0.5">
 				<p class="max-w-xs font-display text-h3 text-ink">{{ degree }}</p>
@@ -18,6 +19,5 @@ defineProps<{
 				<p class="w-full text-body-s text-ink/60">{{ description }}</p>
 			</div>
 		</div>
-		<p class="shrink-0 whitespace-nowrap text-body-s text-ink/60">{{ dateRange }}</p>
 	</div>
 </template>

@@ -15,8 +15,9 @@ const profile = useState("profile-card", () => ({
 </script>
 
 <template>
+	<!-- ponytail: 69px = mobile bar height (py-4 + 36px content + 1px border); update if bar changes -->
 	<aside
-		class="flex h-full w-full flex-col items-start gap-6 bg-ink/5 px-6 pt-23 pb-6 md:px-16 md:pt-32 md:pb-16 lg:border-r lg:border-ink/10 lg:bg-transparent lg:p-6"
+		class="flex h-full min-h-[calc(100svh-69px)] w-full flex-col items-start gap-6 bg-ink/5 px-6 pt-6 pb-6 md:min-h-0 md:px-16 md:pt-[60px] md:pb-16 lg:border-r lg:border-ink/10 lg:bg-transparent lg:p-6"
 	>
 		<SectionsProfileCard v-bind="profile" />
 	</aside>

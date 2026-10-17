@@ -18,7 +18,7 @@ const header = useState<HeaderState>("chrome-header", () => ({
 </script>
 
 <template>
-	<header class="sticky top-0 z-10 flex w-full justify-center bg-paper px-6 py-4 lg:px-16">
+	<header class="sticky top-0 z-10 hidden w-full justify-center bg-paper px-6 py-4 lg:flex lg:px-16">
 		<div class="flex w-full max-w-[640px] items-center gap-5">
 			<span class="flex size-9 shrink-0 items-center justify-center p-0.5">
 				<Icon name="ph:user-circle" class="size-8 text-accent" />
