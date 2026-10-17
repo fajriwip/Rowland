@@ -105,16 +105,14 @@ watchEffect(() => {
 
 <template>
 	<div class="flex min-h-screen w-full flex-col items-stretch bg-paper lg:flex-row lg:items-start">
-		<!-- ponytail: mobile/tablet menu bar per Figma 88:1283 — logo + hamburger, dropdown panel when open -->
+		<!-- ponytail: shown below lg — tablet (md+) renders the desktop nav inline, mobile keeps the hamburger + dropdown -->
 		<div class="sticky top-0 z-10 bg-paper lg:hidden">
 			<div class="flex w-full justify-center border-b border-ink/10 px-6 py-4">
-				<div class="flex w-full max-w-[640px] items-center justify-between">
-					<span class="flex size-9 shrink-0 items-center justify-center p-0.5">
-						<Icon name="ph:user-circle" class="size-8 text-accent" />
-					</span>
+				<!-- ponytail: reuse the shared header content; links show from md up, hamburger only below md -->
+				<ChromeHeaderNav links-from="md">
 					<button
 						type="button"
-						class="flex size-9 shrink-0 items-center justify-center p-2"
+						class="flex size-9 shrink-0 items-center justify-center p-2 md:hidden"
 						aria-label="Toggle menu"
 						@click="menuOpen = !menuOpen"
 					>
@@ -127,9 +125,9 @@ watchEffect(() => {
 							<span class="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-ink" />
 						</span>
 					</button>
-				</div>
+				</ChromeHeaderNav>
 			</div>
-			<nav v-if="menuOpen" class="flex w-full flex-col items-center gap-6 border-b border-ink/10 p-6">
+			<nav v-if="menuOpen" class="flex w-full flex-col items-center gap-6 border-b border-ink/10 p-6 md:hidden">
 				<ul class="flex flex-col items-center gap-1">
 					<li v-for="item in header.items" :key="item.label">
 						<a :href="item.href" class="py-1 text-body-s font-medium text-ink/60" @click="menuOpen = false">{{ item.label }}</a>
