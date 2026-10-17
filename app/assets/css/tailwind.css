@@ -8,6 +8,8 @@
   --color-paper: #fbf5ef;
   --color-accent: #e55639;
 
+  --breakpoint-lg: 62rem;
+
   --text-h1: 40px;
   --text-h1--line-height: 1.2;
   --text-h1--letter-spacing: -0.02em;
