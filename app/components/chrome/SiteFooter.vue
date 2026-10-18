@@ -1,13 +1,5 @@
 <script setup lang="ts">
-type FooterState = {
-	brandName: string;
-	backToTopLabel: string;
-};
-
-const footer = useState<FooterState>("chrome-footer", () => ({
-	brandName: "",
-	backToTopLabel: "Back to Top",
-}));
+const footer = useFooterState();
 
 const copyright = computed(() => {
 	const year = new Date().getFullYear();

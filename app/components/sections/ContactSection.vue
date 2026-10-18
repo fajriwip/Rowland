@@ -13,7 +13,7 @@ defineProps<{
 </script>
 
 <template>
-	<section class="flex w-full flex-col items-center gap-22 py-22 md:gap-26 md:py-26">
+	<section class="flex w-full flex-col items-center scroll-mt-24 gap-22 py-22 md:gap-26 md:py-26">
 		<div class="flex w-full flex-col items-start gap-8">
 			<div class="flex w-full flex-col items-center gap-2.5 text-center">
 				<h2 class="max-w-xs font-display text-h2-mobile text-ink md:text-h2">{{ heading }}</h2>

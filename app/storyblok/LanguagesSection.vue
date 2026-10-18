@@ -33,5 +33,5 @@ const items = () =>
 </script>
 
 <template>
-	<SectionsLanguagesSection v-editable="blok" :heading="blok.heading" :items="items()" />
+	<SectionsLanguagesSection v-editable="blok" :id="blok.anchor" :heading="blok.heading" :items="items()" />
 </template>

@@ -5,6 +5,7 @@ const props = defineProps({ blok: { type: Object, required: true } });
 <template>
 	<SectionsSkillsSection
 		v-editable="blok"
+		:id="blok.anchor"
 		:heading="blok.heading"
 		:skills="blok.skills?.map((s: any) => s.label) ?? []"
 		:stack-label="blok.stack_label"

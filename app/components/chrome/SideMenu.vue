@@ -1,17 +1,5 @@
 <script setup lang="ts">
-const profile = useState("profile-card", () => ({
-	photo: "",
-	name: "",
-	position: "",
-	tagline: "",
-	signature: "",
-	location: "",
-	yearsExperience: "",
-	availability: "",
-	cvFile: "",
-	email: "",
-	socialLinks: [],
-}));
+const profile = useProfileCardState();
 </script>
 
 <template>

@@ -3,7 +3,9 @@ const props = defineProps<{ icon?: string; label: string; value: string }>();
 
 const ICONS: Record<string, string> = {
 	envelope: "ph:envelope-simple",
+	email: "ph:envelope-simple",
 	phone: "ph:phone",
+	call: "ph:phone",
 	external: "ph:arrow-up-right",
 };
 
@@ -22,7 +24,8 @@ const inferredIcon = computed(() => {
 });
 
 const iconName = computed(() => {
-	if (props.icon && ICONS[props.icon]) return ICONS[props.icon];
+	const key = props.icon?.toLowerCase();
+	if (key && ICONS[key]) return ICONS[key];
 	return ICONS[inferredIcon.value] || ICONS.external;
 });
 </script>

@@ -4,7 +4,7 @@ defineProps<{ heading: string; bordered?: boolean; tight?: boolean }>();
 
 <template>
 	<section
-		class="flex w-full flex-col items-start py-12 md:py-16"
+		class="flex w-full flex-col items-start scroll-mt-24 py-12 md:py-16"
 		:class="[bordered !== false && 'border-b border-ink/10', tight ? 'gap-4' : 'gap-8 md:gap-10']"
 	>
 		<h2 class="max-w-xs font-display text-h2-mobile text-ink md:text-h2">{{ heading }}</h2>

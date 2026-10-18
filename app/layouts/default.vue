@@ -1,11 +1,5 @@
 <script setup lang="ts">
-const { story } = await useAsyncStoryblok("home", {
-	deep: true,
-	api: {
-		version: "draft",
-	},
-	bridge: {},
-});
+const { story } = await useAsyncStoryblok("home", STORYBLOK_OPTIONS);
 
 const storyblokApi = useStoryblokApi();
 const { data: space } = await useAsyncData("storyblok-space", async () => {
@@ -13,47 +7,10 @@ const { data: space } = await useAsyncData("storyblok-space", async () => {
 	return response?.data?.space ?? null;
 });
 
-type HeaderMenuItem = {
-	label: string;
-	href: string;
-};
-
-type HeaderState = {
-	items: HeaderMenuItem[];
-	ctaLabel: string;
-	ctaHref: string;
-};
-
-type FooterState = {
-	brandName: string;
-	backToTopLabel: string;
-};
-
 // ponytail: profile state must populate before the layout renders, else ProfileCard SSRs empty and hydration mismatches
-const profile = useState("profile-card", () => ({
-	photo: "",
-	name: "",
-	position: "",
-	tagline: "",
-	signature: "",
-	location: "",
-	yearsExperience: "",
-	availability: "",
-	cvFile: "",
-	email: "",
-	socialLinks: [],
-}));
-
-const header = useState<HeaderState>("chrome-header", () => ({
-	items: [],
-	ctaLabel: "",
-	ctaHref: "#contact",
-}));
-
-const footer = useState<FooterState>("chrome-footer", () => ({
-	brandName: "",
-	backToTopLabel: "Back to Top",
-}));
+const profile = useProfileCardState();
+const header = useHeaderState();
+const footer = useFooterState();
 
 const menuOpen = ref(false);
 
@@ -72,6 +29,7 @@ watchEffect(() => {
 	const content = story.value?.content;
 	const current = content?.profile?.[0];
 	const headerBlok = content?.header?.[0];
+	// ponytail: each menu item's href (e.g. "#contact") must match the target section blok's `anchor` field — drift = a dead link
 	const menuItems = normalizeHeaderItems(headerBlok?.menu_items);
 	const ctaLabel = (headerBlok?.cta_label || "").toString();
 	const ctaHref = (headerBlok?.cta_href || "#contact").toString();
@@ -128,15 +86,7 @@ watchEffect(() => {
 				</ChromeHeaderNav>
 			</div>
 			<nav v-if="menuOpen" class="flex w-full flex-col items-center gap-6 border-b border-ink/10 p-6 md:hidden">
-				<ul class="flex flex-col items-center gap-1">
-					<li v-for="item in header.items" :key="item.label">
-						<a :href="item.href" class="py-1 text-body-s font-medium text-ink/60" @click="menuOpen = false">{{ item.label }}</a>
-					</li>
-				</ul>
-				<a :href="header.ctaHref" class="flex w-full items-center justify-center gap-2 bg-ink px-4 py-2" @click="menuOpen = false">
-					<Icon name="ph:chat-circle" class="size-4 text-paper" />
-					<span class="text-body-s font-medium text-paper whitespace-nowrap">{{ header.ctaLabel }}</span>
-				</a>
+				<ChromeNavLinks layout="column" @navigate="menuOpen = false" />
 			</nav>
 		</div>
 		<div class="w-full shrink-0 lg:w-90 lg:sticky lg:top-0 lg:h-screen">

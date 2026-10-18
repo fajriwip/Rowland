@@ -12,5 +12,5 @@ const items = () =>
 </script>
 
 <template>
-	<SectionsCertificationsSection v-editable="blok" :heading="blok.heading" :items="items()" />
+	<SectionsCertificationsSection v-editable="blok" :id="blok.anchor" :heading="blok.heading" :items="items()" />
 </template>

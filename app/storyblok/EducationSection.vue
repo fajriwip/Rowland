@@ -16,5 +16,5 @@ const items = () =>
 </script>
 
 <template>
-	<SectionsEducationSection v-editable="blok" :heading="blok.heading" :items="items()" />
+	<SectionsEducationSection v-editable="blok" :id="blok.anchor" :heading="blok.heading" :items="items()" />
 </template>
