@@ -63,6 +63,18 @@ watchEffect(() => {
 
 <template>
 	<div class="flex min-h-screen w-full flex-col items-stretch bg-paper lg:flex-row lg:items-start">
+		<svg aria-hidden="true" width="0" height="0" class="absolute" focusable="false">
+			<defs>
+				<filter id="brand-accent" color-interpolation-filters="sRGB">
+					<feFlood style="flood-color: var(--color-accent)" />
+					<feComposite in2="SourceAlpha" operator="in" />
+				</filter>
+				<filter id="brand-ink" color-interpolation-filters="sRGB">
+					<feFlood style="flood-color: var(--color-ink)" />
+					<feComposite in2="SourceAlpha" operator="in" />
+				</filter>
+			</defs>
+		</svg>
 		<!-- ponytail: shown below lg — tablet (md+) renders the desktop nav inline, mobile keeps the hamburger + dropdown -->
 		<div class="sticky top-0 z-10 bg-paper lg:hidden">
 			<div class="flex w-full justify-center border-b border-ink/10 px-6 py-4">

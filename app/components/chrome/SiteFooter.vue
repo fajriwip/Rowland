@@ -10,6 +10,6 @@ const copyright = computed(() => {
 <template>
 	<div class="flex w-full items-center justify-between border-t border-ink/10 py-4">
 		<p class="text-body-s text-ink">{{ copyright }}</p>
-		<a href="#top" class="py-1 text-body-s font-medium text-ink/60">{{ footer.backToTopLabel }}</a>
+		<a href="#top" class="py-1 text-body-s font-medium text-ink/65">{{ footer.backToTopLabel }}</a>
 	</div>
 </template>

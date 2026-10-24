@@ -12,7 +12,7 @@ const column = computed(() => props.layout === "column");
 <template>
 	<ul :class="column ? 'flex flex-col items-center gap-1' : 'flex items-center gap-4'">
 		<li v-for="item in header.items" :key="item.label">
-			<a :href="item.href" class="py-1 text-body-s font-medium text-ink/60" @click="emit('navigate')">{{ item.label }}</a>
+			<a :href="item.href" class="py-1 text-body-s font-medium text-ink/65" @click="emit('navigate')">{{ item.label }}</a>
 		</li>
 	</ul>
 	<a

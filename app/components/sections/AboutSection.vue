@@ -10,7 +10,7 @@ defineProps<{
 <template>
 	<SectionsSectionShell :heading="heading" tight>
 		<div class="flex w-full flex-col items-start gap-8">
-			<p class="max-w-[480px] w-full text-body-m text-ink/60">{{ text }}</p>
+			<p class="max-w-[480px] w-full text-body-m text-ink/65">{{ text }}</p>
 			<div class="flex w-full flex-col items-start gap-3">
 				<p class="text-body-m text-ink whitespace-nowrap">{{ skillsLabel }}</p>
 				<div class="flex w-full max-w-[560px] flex-wrap items-start gap-1">

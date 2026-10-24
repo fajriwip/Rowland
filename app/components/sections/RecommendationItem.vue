@@ -17,17 +17,17 @@ defineProps<{
 			<div class="flex flex-1 flex-col items-start gap-4">
 				<div class="flex w-full flex-col items-start gap-0.5">
 					<p class="max-w-xs font-display text-h3 text-ink">{{ name }}</p>
-					<p class="w-full text-body-s text-ink/60">{{ role }}</p>
+					<p class="w-full text-body-s text-ink/65">{{ role }}</p>
 				</div>
 				<div class="flex w-full max-w-[360px] flex-col items-start gap-2.5">
-					<p class="w-full text-body-s text-ink/60">{{ quote }}</p>
+					<p class="w-full text-body-s text-ink/65">{{ quote }}</p>
 				</div>
 			</div>
 			<a
 				:href="sourceLink || '#'"
 				target="_blank"
 				rel="noopener"
-				class="flex shrink-0 items-center justify-center bg-ink/5 p-1.5"
+				class="flex shrink-0 items-center justify-center bg-surface p-1.5"
 			>
 				<Icon name="ph:arrow-up-right" class="size-3 text-ink" />
 			</a>

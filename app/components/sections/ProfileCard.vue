@@ -27,11 +27,11 @@ defineProps<{
 				<div class="flex w-full flex-col items-start gap-4 md:flex-1 lg:w-full">
 					<div class="flex w-full flex-col items-start gap-0.5">
 						<p class="w-full font-display text-display text-ink">{{ name }}</p>
-						<p class="w-full text-body-s text-ink/60">{{ position }}</p>
+						<p class="w-full text-body-s text-ink/65">{{ position }}</p>
 					</div>
-					<p class="w-full max-w-[264px] text-body-m text-ink/60 md:max-w-[360px] lg:max-w-[264px]">{{ tagline }}</p>
+					<p class="w-full max-w-[264px] text-body-m text-ink/65 md:max-w-[360px] lg:max-w-[264px]">{{ tagline }}</p>
 				</div>
-				<img :src="signature" alt="" class="h-12 w-[83px] shrink-0 lg:h-[68px] lg:w-[118px]" />
+				<img :src="signature" alt="" class="brand-artwork-ink h-12 w-[83px] shrink-0 lg:h-[68px] lg:w-[118px]" />
 			</div>
 		</div>
 		<div class="flex flex-1 flex-col items-start justify-between gap-6 w-full md:gap-16">
@@ -69,7 +69,7 @@ defineProps<{
 					</a>
 					<a
 						:href="`mailto:${email}`"
-						class="flex shrink-0 items-center justify-center bg-ink/5 p-3.5"
+						class="flex shrink-0 items-center justify-center bg-surface p-3.5"
 					>
 						<Icon name="ph:envelope-simple" class="size-5 text-ink" />
 					</a>

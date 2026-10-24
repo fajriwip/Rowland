@@ -17,16 +17,16 @@ defineProps<{
 			<div class="flex flex-1 flex-col items-start gap-0.5">
 				<p class="max-w-xs font-display text-h3 text-ink">{{ title }}</p>
 				<div class="flex flex-wrap items-center gap-x-2">
-					<span class="text-body-s text-ink/60">{{ issuer }}</span>
+					<span class="text-body-s text-ink/65">{{ issuer }}</span>
 					<span class="size-[3px] bg-ink/60" />
-					<span class="text-body-s text-ink/60">Issued {{ issuedDate }}</span>
+					<span class="text-body-s text-ink/65">Issued {{ issuedDate }}</span>
 				</div>
 			</div>
 			<a
 				:href="link || '#'"
 				target="_blank"
 				rel="noopener"
-				class="flex shrink-0 items-center justify-center bg-ink/5 p-1.5"
+				class="flex shrink-0 items-center justify-center bg-surface p-1.5"
 			>
 				<Icon name="ph:arrow-up-right" class="size-3 text-ink" />
 			</a>

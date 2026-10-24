@@ -9,14 +9,14 @@ defineProps<{
 
 <template>
 	<div class="flex w-full flex-col items-start gap-3 md:flex-row-reverse md:gap-6">
-		<p class="shrink-0 whitespace-nowrap text-body-s text-ink/60">{{ dateRange }}</p>
+		<p class="shrink-0 whitespace-nowrap text-body-s text-ink/65">{{ dateRange }}</p>
 		<div class="flex flex-1 flex-col items-start gap-4">
 			<div class="flex w-full flex-col items-start gap-0.5">
 				<p class="max-w-xs font-display text-h3 text-ink">{{ degree }}</p>
-				<p class="w-full text-body-s text-ink/60">{{ school }}</p>
+				<p class="w-full text-body-s text-ink/65">{{ school }}</p>
 			</div>
 			<div class="flex w-full max-w-[360px] flex-col items-start gap-2.5">
-				<p class="w-full text-body-s text-ink/60">{{ description }}</p>
+				<p class="w-full text-body-s text-ink/65">{{ description }}</p>
 			</div>
 		</div>
 	</div>

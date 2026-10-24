@@ -27,19 +27,19 @@ withDefaults(
 		</div>
 		<div class="flex flex-1 flex-col items-start gap-6">
 			<div class="flex w-full flex-col items-start gap-3 md:flex-row-reverse md:gap-6">
-				<p class="shrink-0 whitespace-nowrap text-body-s text-ink/60">{{ dateRange }}</p>
+				<p class="shrink-0 whitespace-nowrap text-body-s text-ink/65">{{ dateRange }}</p>
 				<div class="flex flex-1 flex-col items-start gap-4">
 					<div class="flex w-full flex-col items-start gap-0.5">
 						<p class="max-w-xs font-display text-h3 text-ink">{{ role }}</p>
 						<div class="flex flex-wrap items-center gap-x-2">
-							<span class="text-body-s text-ink/60">{{ company }}</span>
+							<span class="text-body-s text-ink/65">{{ company }}</span>
 							<span class="size-[3px] bg-ink/60" />
-							<span class="text-body-s text-ink/60">{{ employmentType }}</span>
+							<span class="text-body-s text-ink/65">{{ employmentType }}</span>
 						</div>
 					</div>
 					<div class="flex w-full max-w-[360px] flex-col items-start gap-2.5">
 						<div
-							class="w-full text-body-s text-ink/60 [&_p]:contents [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:marker:text-ink/60"
+							class="w-full text-body-s text-ink/65 [&_p]:contents [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:marker:text-ink/65"
 							v-html="description"
 						/>
 					</div>

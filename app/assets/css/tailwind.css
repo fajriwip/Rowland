@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Habibi", serif;
-  --font-body: "Geist", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-body: "Instrument Sans", sans-serif;
 
-  --color-ink: #1a0a06;
-  --color-paper: #fbf5ef;
-  --color-accent: #e55639;
+  --color-ink: #14231c;
+  --color-paper: #f2f4ec;
+  --color-accent: #1f6f54;
+  --color-surface: #e6eadf;
 
   --breakpoint-lg: 62rem;
 
@@ -62,4 +63,12 @@ body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
+}
+
+.brand-artwork-accent {
+  filter: url("#brand-accent");
+}
+
+.brand-artwork-ink {
+  filter: url("#brand-ink");
 }

@@ -9,7 +9,7 @@ defineProps<{ flag: string; name: string; proficiency: string }>();
 		</div>
 		<div class="flex flex-1 flex-col items-start gap-0.5">
 			<p class="max-w-xs font-display text-h3 text-ink">{{ name }}</p>
-			<p class="w-full text-body-s text-ink/60">{{ proficiency }}</p>
+			<p class="w-full text-body-s text-ink/65">{{ proficiency }}</p>
 		</div>
 	</div>
 </template>
