@@ -27,9 +27,9 @@ defineProps<{
 				:href="sourceLink || '#'"
 				target="_blank"
 				rel="noopener"
-				class="flex shrink-0 items-center justify-center bg-surface p-1.5"
+				class="group flex shrink-0 items-center justify-center bg-surface p-1.5 transition-colors duration-200 hover:bg-ink/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 			>
-				<Icon name="ph:arrow-up-right" class="size-3 text-ink" />
+				<Icon name="ph:arrow-up-right" class="size-3 text-ink transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px" />
 			</a>
 		</div>
 	</div>

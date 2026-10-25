@@ -62,6 +62,7 @@ watchEffect(() => {
 </script>
 
 <template>
+	<MotionConfig reduced-motion="user">
 	<div class="flex min-h-screen w-full flex-col items-stretch bg-paper lg:flex-row lg:items-start">
 		<svg aria-hidden="true" width="0" height="0" class="absolute" focusable="false">
 			<defs>
@@ -84,22 +85,37 @@ watchEffect(() => {
 						type="button"
 						class="flex size-9 shrink-0 items-center justify-center p-2 md:hidden"
 						aria-label="Toggle menu"
+						:aria-expanded="menuOpen"
 						@click="menuOpen = !menuOpen"
 					>
-						<span v-if="!menuOpen" class="flex flex-col gap-1">
-							<span class="h-px w-5 bg-ink" />
-							<span class="h-px w-5 bg-ink" />
-						</span>
-						<span v-else class="relative size-3">
-							<span class="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-ink" />
-							<span class="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-ink" />
+						<!-- ponytail: two lines morph into an X via transform; 2.5px = half of (1px line + 4px gap) -->
+						<span class="relative size-5">
+							<span
+								class="absolute left-0 top-1/2 h-px w-5 bg-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
+								:class="menuOpen ? 'rotate-45' : '-translate-y-[2.5px]'"
+							/>
+							<span
+								class="absolute left-0 top-1/2 h-px w-5 bg-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
+								:class="menuOpen ? '-rotate-45' : 'translate-y-[2.5px]'"
+							/>
 						</span>
 					</button>
 				</ChromeHeaderNav>
 			</div>
-			<nav v-if="menuOpen" class="flex w-full flex-col items-center gap-6 border-b border-ink/10 p-6 md:hidden">
-				<ChromeNavLinks layout="column" @navigate="menuOpen = false" />
-			</nav>
+			<AnimatePresence>
+				<Motion
+					v-if="menuOpen"
+					as="nav"
+					:initial="{ height: 0, opacity: 0 }"
+					:animate="{ height: 'auto', opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }"
+					:exit="{ height: 0, opacity: 0, transition: { duration: 0.2, ease: [0.7, 0, 0.84, 0] } }"
+					class="overflow-hidden border-b border-ink/10 md:hidden"
+				>
+					<div class="flex w-full flex-col items-center gap-6 p-6">
+						<ChromeNavLinks layout="column" @navigate="menuOpen = false" />
+					</div>
+				</Motion>
+			</AnimatePresence>
 		</div>
 		<div class="w-full shrink-0 lg:w-90 lg:sticky lg:top-0 lg:h-screen">
 			<ChromeSideMenu />
@@ -114,4 +130,5 @@ watchEffect(() => {
 			</div>
 		</div>
 	</div>
+	</MotionConfig>
 </template>

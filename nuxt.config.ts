@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2026-01-13",
   devtools: { enabled: false },
-  modules: ["@storyblok/nuxt", "@nuxt/icon"],
+  modules: ["@storyblok/nuxt", "@nuxt/icon", "motion-v/nuxt"],
 
   css: ["~/assets/css/tailwind.css"],
 
@@ -39,6 +39,9 @@ export default defineNuxtConfig({
   },
 
   ssr: true,
+
+  // hash links (nav, back-to-top, direct URL with #anchor) glide instead of jumping
+  router: { options: { scrollBehaviorType: "smooth" } },
 
   devServer: {
     https: true

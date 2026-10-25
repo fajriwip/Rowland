@@ -62,14 +62,14 @@ defineProps<{
 				<div class="flex w-full items-center gap-2">
 					<a
 						:href="cvFile || '#'"
-						class="flex flex-1 items-center justify-center gap-2 bg-ink px-6 py-3.5"
+						class="flex flex-1 items-center justify-center gap-2 bg-ink px-6 py-3.5 transition-colors duration-200 hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 					>
 						<Icon name="ph:download-simple" class="size-5 text-paper" />
 						<span class="text-body-s font-medium text-paper whitespace-nowrap">Download CV</span>
 					</a>
 					<a
 						:href="`mailto:${email}`"
-						class="flex shrink-0 items-center justify-center bg-surface p-3.5"
+						class="flex shrink-0 items-center justify-center bg-surface p-3.5 transition-colors duration-200 hover:bg-ink/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 					>
 						<Icon name="ph:envelope-simple" class="size-5 text-ink" />
 					</a>

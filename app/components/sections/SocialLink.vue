@@ -15,9 +15,9 @@ const ICONS: Record<string, string> = {
 		:href="url"
 		target="_blank"
 		rel="noopener"
-		class="flex items-center justify-center"
+		class="group flex items-center justify-center"
 		:class="size === 'sm' ? 'p-1.5' : 'p-2'"
 	>
-		<Icon :name="ICONS[platform] || 'ph:link'" class="text-ink" :class="size === 'sm' ? 'size-5' : 'size-8'" />
+		<Icon :name="ICONS[platform] || 'ph:link'" class="text-ink transition-colors duration-200 group-hover:text-accent" :class="size === 'sm' ? 'size-5' : 'size-8'" />
 	</a>
 </template>
