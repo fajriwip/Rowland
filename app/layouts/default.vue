@@ -122,7 +122,7 @@ watchEffect(() => {
 		</div>
 		<div class="flex min-h-screen flex-1 flex-col items-center">
 			<ChromeSiteHeader />
-			<main class="w-full max-w-[640px] px-6 md:px-16 lg:px-0">
+			<main class="w-full max-w-[640px] flex-1 px-6 md:px-16 lg:px-0">
 				<slot />
 			</main>
 			<div class="w-full max-w-[640px] px-6 md:px-16 lg:px-0">
