@@ -31,6 +31,6 @@ defineProps<{
 				</div>
 			</div>
 		</div>
-		<img v-if="illustration" :src="illustration" alt="" class="brand-artwork-accent size-60 lg:size-80" />
+		<img v-if="illustration" :src="illustration" alt="" class="size-60 lg:size-80" />
 	</section>
 </template>

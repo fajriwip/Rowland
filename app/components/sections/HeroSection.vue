@@ -16,7 +16,7 @@ const headingLead = computed(() => words.value.slice(0, -1).join(" ") + " ");
 
 <template>
 	<div class="flex w-full flex-col items-center gap-10 pt-22 pb-22 md:pt-26 md:pb-26">
-		<img :src="illustration" alt="" class="brand-artwork-accent h-32 w-40" />
+		<img :src="illustration" alt="" class="w-60" />
 		<div class="flex w-full flex-col items-center gap-6">
 			<div class="flex w-full flex-col items-center gap-2.5 text-center">
 				<h1
