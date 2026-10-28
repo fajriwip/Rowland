@@ -25,8 +25,7 @@ const inferredIcon = computed(() => {
 
 const iconName = computed(() => {
 	const key = props.icon?.toLowerCase();
-	if (key && ICONS[key]) return ICONS[key];
-	return ICONS[inferredIcon.value] || ICONS.external;
+	return (key && ICONS[key]) || ICONS[inferredIcon.value] || "ph:arrow-up-right";
 });
 </script>
 

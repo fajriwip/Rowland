@@ -20,7 +20,7 @@ The dev server runs over HTTPS (`vite-plugin-mkcert`) because the Storyblok Visu
 
 ### Scripts
 
-`npm run dev` · `npm run build` · `npm run generate` · `npm run preview`
+`npm run dev` · `npm run typecheck` · `npm run build` · `npm run generate` · `npm run preview`
 
 ## Content versions
 

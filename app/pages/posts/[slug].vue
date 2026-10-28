@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { renderRichText } from "@storyblok/vue";
-
 const slug = useRoute().params.slug as string;
 const storyblokApi = useStoryblokApi();
 
@@ -17,15 +15,8 @@ if (!post.value) throw createError({ statusCode: 404, statusMessage: "Post not f
 
 const title = computed(() => post.value.content.title || post.value.name);
 // ponytail: pasted richtext carries inline color (#000000) that fights the palette; strip it, keep italic/bold
-const html = computed(() => renderRichText(post.value.content.body).replace(/\s*style="color:[^"]*"/g, ""));
-const date = computed(() => {
-	const raw: string = post.value.content.date;
-	return raw
-		? new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(
-				new Date(`${raw.slice(0, 10)}T00:00:00Z`),
-			)
-		: "";
-});
+const html = computed(() => safeRichText(post.value.content.body).replace(/\s*style="color:[^"]*"/g, ""));
+const date = computed(() => formatDate(post.value.content.date, "long"));
 const author = computed(() => post.value.content.author);
 
 useHead({ title });
