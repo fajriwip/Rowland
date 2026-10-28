@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { SbExperienceItem } from "~/types/storyblok";
 const props = defineProps({ blok: { type: Object, required: true } });
 
 const items = () =>
-	props.blok.items?.map((item: any) => ({
+	props.blok.items?.map((item: SbExperienceItem) => ({
 		logo: item.logo?.filename,
 		role: item.role,
 		company: item.company,

@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { SbRecommendationItem } from "~/types/storyblok";
 const props = defineProps({ blok: { type: Object, required: true } });
 
 const items = () =>
-	props.blok.items?.map((item: any) => ({
+	props.blok.items?.map((item: SbRecommendationItem) => ({
 		avatar: item.photo?.filename,
 		name: item.name,
 		role: item.role,

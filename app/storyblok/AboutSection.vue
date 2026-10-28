@@ -9,6 +9,6 @@ const props = defineProps({ blok: { type: Object, required: true } });
 		:heading="blok.heading"
 		:text="blok.text"
 		:skills-label="blok.skills_label"
-		:skills="blok.skills?.map((s: any) => s.label) ?? []"
+		:skills="blok.skills?.map((s: { label: string }) => s.label) ?? []"
 	/>
 </template>

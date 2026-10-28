@@ -7,8 +7,8 @@ const props = defineProps({ blok: { type: Object, required: true } });
 		v-editable="blok"
 		:id="blok.anchor"
 		:heading="blok.heading"
-		:skills="blok.skills?.map((s: any) => s.label) ?? []"
+		:skills="blok.skills?.map((s: { label: string }) => s.label) ?? []"
 		:stack-label="blok.stack_label"
-		:stack-logos="blok.stack_logos?.map((l: any) => l.icon) ?? []"
+		:stack-logos="blok.stack_logos?.map((l: { icon: string }) => l.icon) ?? []"
 	/>
 </template>
