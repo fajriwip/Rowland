@@ -22,14 +22,6 @@ const excerptOf = (body: any) => {
 	return text.length > EXCERPT_LENGTH ? `${text.slice(0, EXCERPT_LENGTH).replace(/\s+\S*$/, "")}…` : text;
 };
 
-// date strings look like "2026-10-25 00:00"; format the date part as UTC so SSR and client agree
-const formatDate = (raw?: string) =>
-	raw
-		? new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(
-				new Date(`${raw.slice(0, 10)}T00:00:00Z`),
-			)
-		: "";
-
 useHead({ title: "Posts" });
 </script>
 

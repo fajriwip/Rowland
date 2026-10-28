@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { SbLanguageItem } from "~/types/storyblok";
 type LanguageEntry = { name: string; value: string };
 
 const props = defineProps({ blok: { type: Object, required: true } });
@@ -22,7 +23,7 @@ const entryFor = (language: string) =>
 	entries.value?.find((entry) => entry.name === language || entry.value === language);
 
 const items = () =>
-	props.blok.items?.map((item: any) => {
+	props.blok.items?.map((item: SbLanguageItem) => {
 		const entry = entryFor(item.language);
 		return {
 			flag: entry?.value ?? "",

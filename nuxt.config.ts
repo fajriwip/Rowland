@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2026-01-13",
   devtools: { enabled: false },
-  modules: ["@storyblok/nuxt", "@nuxt/icon", "motion-v/nuxt"],
+  modules: ["@storyblok/nuxt", "@nuxt/icon", "@nuxt/fonts", "motion-v/nuxt"],
 
   css: ["~/assets/css/tailwind.css"],
 
@@ -21,21 +21,12 @@ export default defineNuxtConfig({
     },
   },
 
-  app: {
-    head: {
-      link: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Instrument+Sans:wght@400..700&display=swap",
-        },
-      ],
-    },
+  // fonts are self-hosted at build time by @nuxt/fonts from the font-family names in tailwind.css
+  fonts: {
+    families: [
+      { name: "Fraunces", provider: "google", weights: ["100 900"] },
+      { name: "Instrument Sans", provider: "google", weights: ["400 700"] },
+    ],
   },
 
   ssr: true,

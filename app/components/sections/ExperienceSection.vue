@@ -20,7 +20,7 @@ defineProps<{ heading: string; items: ExperienceEntry[] }>();
 				:key="item.role + item.dateRange"
 				v-bind="item"
 				:show-line="index < items.length - 1"
-				:show-logo="index === 0 || item.company !== items[index - 1].company"
+				:show-logo="index === 0 || item.company !== items[index - 1]?.company"
 			/>
 		</div>
 	</SectionsSectionShell>
