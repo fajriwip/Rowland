@@ -3,7 +3,8 @@
 export const STORYBLOK_OPTIONS = {
 	deep: true, // ponytail: required for Nuxt 4 bridge — shallow reactivity breaks live updates (storyblok/monoblok#210)
 	api: {
-		version: "draft",
+		// ponytail: drafts only in dev (visual editor); production must never serve unpublished content
+		version: import.meta.dev ? "draft" : "published",
 	},
 	bridge: {},
 } as const;
