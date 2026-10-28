@@ -91,25 +91,26 @@ watchEffect(() => {
 						<!-- ponytail: two lines morph into an X via transform; 2.5px = half of (1px line + 4px gap) -->
 						<span class="relative size-5">
 							<span
-								class="absolute left-0 top-1/2 h-px w-5 bg-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
+								class="absolute left-0 top-1/2 h-px w-5 bg-ink transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
 								:class="menuOpen ? 'rotate-45' : '-translate-y-[2.5px]'"
 							/>
 							<span
-								class="absolute left-0 top-1/2 h-px w-5 bg-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
+								class="absolute left-0 top-1/2 h-px w-5 bg-ink transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
 								:class="menuOpen ? '-rotate-45' : 'translate-y-[2.5px]'"
 							/>
 						</span>
 					</button>
 				</ChromeHeaderNav>
 			</div>
+			<!-- ponytail: overlay panel (absolute under the bar) so opening never reflows the page; clip-path + transform + opacity only, no height animation. Exit is faster than enter. -->
 			<AnimatePresence>
 				<Motion
 					v-if="menuOpen"
 					as="nav"
-					:initial="{ height: 0, opacity: 0 }"
-					:animate="{ height: 'auto', opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }"
-					:exit="{ height: 0, opacity: 0, transition: { duration: 0.2, ease: [0.7, 0, 0.84, 0] } }"
-					class="overflow-hidden border-b border-ink/10 md:hidden"
+					:initial="{ opacity: 0, y: -8, clipPath: 'inset(0 0 100% 0)' }"
+					:animate="{ opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)', transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] } }"
+					:exit="{ opacity: 0, y: -4, clipPath: 'inset(0 0 100% 0)', transition: { duration: 0.15, ease: [0.23, 1, 0.32, 1] } }"
+					class="absolute inset-x-0 top-full border-b border-ink/10 bg-paper md:hidden"
 				>
 					<div class="flex w-full flex-col items-center gap-6 p-6">
 						<ChromeNavLinks layout="column" @navigate="menuOpen = false" />
