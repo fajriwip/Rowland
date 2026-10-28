@@ -10,9 +10,9 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@nuxt/icon": "^2.5.1",
+		"@nuxt/icon": "^2.6.1",
 		"motion-v": "^2.8.0",
-		"nuxt": "^4.2.2",
+		"nuxt": "^4.6.2",
 		"vue": "^3.5.18",
 		"vue-router": "^5.3.1"
 	},
