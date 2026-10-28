@@ -1,0 +1,35 @@
+<script setup lang="ts">
+defineProps<{
+	logo: string;
+	title: string;
+	issuer: string;
+	issuedDate: string;
+	link?: string;
+}>();
+</script>
+
+<template>
+	<div class="flex w-full items-start gap-4">
+		<div class="flex shrink-0 items-start justify-center pt-0.5">
+			<img :src="logo" alt="" class="size-10 object-cover" />
+		</div>
+		<div class="flex flex-1 items-start gap-6">
+			<div class="flex flex-1 flex-col items-start gap-0.5">
+				<p class="max-w-xs font-display text-h3 text-ink">{{ title }}</p>
+				<div class="flex flex-wrap items-center gap-x-2">
+					<span class="text-body-s text-ink/65">{{ issuer }}</span>
+					<span class="size-[3px] bg-ink/60" />
+					<span class="text-body-s text-ink/65">Issued {{ issuedDate }}</span>
+				</div>
+			</div>
+			<a
+				:href="link || '#'"
+				target="_blank"
+				rel="noopener"
+				class="group flex shrink-0 items-center justify-center bg-surface p-1.5 transition-colors duration-200 hover:bg-ink/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+			>
+				<Icon name="ph:arrow-up-right" class="size-3 text-ink transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px" />
+			</a>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Instrument Sans", sans-serif;
+
+  --color-ink: #14231c;
+  --color-paper: #f2f4ec;
+  --color-accent: #1f6f54;
+  --color-surface: #e6eadf;
+
+  --breakpoint-lg: 62rem;
+
+  --text-h1: 40px;
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-h2: 32px;
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.02em;
+
+  /* ponytail: Figma Mobile/H1 + Mobile/H2 tokens — mobile-only heading sizes */
+  --text-h1-mobile: 32px;
+  --text-h1-mobile--line-height: 1.2;
+  --text-h1-mobile--letter-spacing: -0.02em;
+
+  --text-h2-mobile: 28px;
+  --text-h2-mobile--line-height: 1.2;
+  --text-h2-mobile--letter-spacing: -0.02em;
+
+  --text-h3: 18px;
+  --text-h3--line-height: 1.28;
+  --text-h3--letter-spacing: -0.02em;
+
+  --text-display: 24px;
+  --text-display--line-height: 1.28;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-body-l: 18px;
+  --text-body-l--line-height: 1.4;
+  --text-body-l--letter-spacing: -0.02em;
+
+  --text-body-m: 16px;
+  --text-body-m--line-height: 1.4;
+  --text-body-m--letter-spacing: -0.02em;
+
+  --text-body-s: 14px;
+  --text-body-s--line-height: 1.4;
+  --text-body-s--letter-spacing: -0.02em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.brand-artwork-accent {
+  filter: url("#brand-accent");
+}
+
+.brand-artwork-ink {
+  filter: url("#brand-ink");
+}

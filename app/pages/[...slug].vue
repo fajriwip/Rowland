@@ -3,12 +3,7 @@ const slug = useRoute().params.slug;
 
 const { story } = await useAsyncStoryblok(
 	slug && slug.length > 0 ? slug.join('/') : 'home',
-	{
-		api: {
-			version: 'draft',
-		},
-		bridge: {},
-	},
+	STORYBLOK_OPTIONS,
 );
 </script>
 

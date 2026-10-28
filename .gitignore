@@ -17,6 +17,9 @@ logs
 .DS_Store
 .fleet
 .idea
+.impeccable
+.storyblok
+.claude
 
 # Local env files
 .env
